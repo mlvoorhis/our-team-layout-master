@@ -46,7 +46,6 @@ p {
 
 .header p {
     color: var(--dark-grey-color);
-    margin-bottom: 72px;
 }
 
 span {
@@ -65,12 +64,14 @@ span.more  {
     flex-direction: column-reverse;
 }
 
-.head {
+.heading {
     margin: 12px 0;
 }
 
 .header {
     padding: 0 32px;
+    margin-bottom: 80px;
+
 }
 
 .main-content {
@@ -110,6 +111,10 @@ article[class*="box"]::before {
     position: absolute;
     bottom: 20px;
     left: 24px;
+}
+
+.name {
+    margin-bottom: 4px;
 }
 
 .box-1 {
@@ -153,6 +158,5 @@ article[class*="box"]::before {
     bottom:0;
     width: 100%;
     background: url(resources/Background_decor@2x.png) no-repeat;
-    z-index: 1}
-
-    /*Fixed image size calc() after updating margin. Added 5px
+    z-index: 1;
+}
