@@ -154,3 +154,5 @@ article[class*="box"]::before {
     width: 100%;
     background: url(resources/Background_decor@2x.png) no-repeat;
     z-index: 1}
+
+    /*Fixed image size calc() after updating margin. Added 5px
