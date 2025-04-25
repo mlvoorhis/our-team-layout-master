@@ -46,6 +46,7 @@ p {
 
 .header p {
     color: var(--dark-grey-color);
+    margin-bottom: 72px;
 }
 
 span {
@@ -78,13 +79,14 @@ span.more  {
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: auto repeat(6, 1fr);
     max-width: 100%;
 }
 
 article[class*="box"] {
     max-width: calc(100vw - 32px);
     position: relative;
+    z-index: 1;
      
 }
 
@@ -135,3 +137,19 @@ article[class*="box"]::before {
     width: 1rem;
     align-self: center;
 }
+
+
+.header> * {
+    position: relative;
+    z-index: 2;
+}
+
+.box-a:before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width: 100%;
+    background: url(resources/Background_decor@2x.png) no-repeat;
+    z-index: 1}
