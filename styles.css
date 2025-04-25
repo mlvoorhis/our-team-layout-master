@@ -1,0 +1,137 @@
+:root {
+    --white-color: #FFFEFE;
+    --light-grey-color: #F3F4F6;
+    --dark-grey-color: #394150;
+    --black-color: #000000;
+    --dark-blue-color: #263FA9;
+    --aqua-color: #86E7D4;
+    --blue-color: #9DC4F8;
+    --purple-color: #C1B6F8;
+    --pink-color: #EDACD2;
+    --yellow-color: #F8D8B0;
+    --font-family: 'Outfit', 'Tahoma', 'Arial', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--white-color);
+  padding: 32px 16px;
+
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--black-color);
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white-color);
+    margin-bottom: 4px;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--white-color)
+}
+
+.header p {
+    color: var(--dark-grey-color);
+}
+
+span {
+    font-size: 1rem;
+    color: var(--dark-blue-color);
+    font-weight: 400;
+}
+
+span.more  {
+    color: var(--dark-grey-color);
+    font-weight: 500;
+}
+
+.flip {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.head {
+    margin: 12px 0;
+}
+
+.header {
+    padding: 0 16px;
+}
+
+.main-content {
+    background-color: var(--light-grey-color);
+    padding: 32px 0;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    max-width: 100%;
+}
+
+article[class*="box"] {
+    max-width: calc(100vw - 32px);
+    position: relative;
+     
+}
+
+article[class*="box"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 0;
+}
+
+.img {
+    width: 100%;
+}
+
+.staff-text {
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+}
+
+.box-1 {
+    background-color: var(--purple-color);
+}
+.box-2 {
+    background-color: var(--pink-color);
+}
+.box-3 {
+    background-color: var(--blue-color);
+}
+.box-4 {
+    background-color: var(--yellow-color);
+}
+.box-5 {
+    background-color: var(--aqua-color);
+}
+
+.box-b {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 32px;
+}
+
+.arrow-img {
+    width: 1rem;
+    align-self: center;
+}
