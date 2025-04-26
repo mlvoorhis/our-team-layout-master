@@ -76,12 +76,13 @@ span.more  {
 
 .main-content {
     background-color: var(--light-grey-color);
-    padding: 32px 0;
+    padding: 32px 0 0 0;
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto repeat(6, 1fr);
     max-width: 100%;
+    position: relative;
 }
 
 article[class*="box"] {
@@ -99,7 +100,8 @@ article[class*="box"]::before {
     right: 0;
     bottom: 0;
     background: url(resources/gradient.svg) no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: bottom center;
     z-index: 0;
 }
 
@@ -150,7 +152,7 @@ article[class*="box"]::before {
     z-index: 2;
 }
 
-.box-a:before {
+.main-content:before {
     content:"";
     position:absolute;
     top:0;
@@ -159,4 +161,79 @@ article[class*="box"]::before {
     width: 100%;
     background: url(resources/Background_decor@2x.png) no-repeat;
     z-index: 1;
+}
+
+.extra { 
+    margin-bottom: 32px;
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        padding: 72px;
+    }
+
+    .main-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "header header header"
+            "box1 box2 box3"
+            "members box4 box5";
+        max-width: 100%;
+        padding: 32px 0 0 0;
+    }
+
+    .header{
+        grid-area: header;
+        width: 60%;
+    }
+    
+    .box-1 {
+        grid-area: box1;
+    }
+    .box-2 {
+        grid-area: box2;
+    }   
+    .box-3 {
+        grid-area: box3;
+    }
+    .box-4 {
+        grid-area: box4;
+    }   
+    .box-5 {
+        grid-area: box5;
+    }
+    
+    .box-b {
+        grid-area: members}
+    
+    article[class*="box"] {
+        max-width: calc(100vw - 64px);
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .header {
+        width: 100%;
+        padding: 32px;
+        margin: 0;
+    }
+    .main-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "header header box1 box2"
+            "members box3 box4 box5";
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .title {
+        font-size: .8rem;
+    }
+
 }
