@@ -225,7 +225,7 @@ article[class*="box"]::before {
     .main-content {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
         grid-template-areas: 
             "header header box1 box2"
             "members box3 box4 box5";
@@ -233,5 +233,33 @@ article[class*="box"]::before {
         padding: 0;
         border-radius: 32px;
     }
+    
+        article[class*="box"] {
+            width: 288px;
+            height: 288px;
+            aspect-ratio: 1 / 1;
+            position: relative;
+            z-index: 1;
+        }
+    
+}
 
+@media screen and (min-width: 1275px) {
+    .main-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "header header box1 box2"
+            "members box3 box4 box5";
+        max-width: 100%;
+        padding: 0;
+        border-radius: 32px;
+    }
+    
+        article[class*="box"] {
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
 }
