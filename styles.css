@@ -83,6 +83,7 @@ span.more  {
     grid-template-rows: auto repeat(6, 1fr);
     max-width: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 article[class*="box"] {
